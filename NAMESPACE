@@ -7,12 +7,12 @@ export(correctIntegral)
 export(calcCvxHullFaces)
 
 importFrom("stats", "runif", "sd", "var")
+importFrom("mclust", "hc", "hclass")
+importFrom("mvtnorm", "dmvnorm")
 
 import(
 	geometry,
-	MASS,
-	mclust,
-	mvtnorm
+	MASS
 )
 
 useDynLib(fmlogcondens, .registration = TRUE)
