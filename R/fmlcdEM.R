@@ -18,6 +18,7 @@
 #'   density}
 #'   \item{densEst}{Matrix where each row contains the marginal distribution p(x)}
 #'   \item{tau}{Marginal distribution over the latent variable p(z)}
+#' @export
 
 fmlcdEM <- function(X, K = 2, posterior, verbose=0, maxIter = 50) {
   n <- nrow(X); d <- ncol(X)

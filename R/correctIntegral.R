@@ -18,6 +18,7 @@
 #'   \item{aSparse, bSparse}{Input hyperplane parameters.}
 #'
 #' @example R/Examples/correctIntegral
+#' @export
 
 correctIntegral <- function(X, mu, a, b, cvh) {
   n <- dim(X)[1]

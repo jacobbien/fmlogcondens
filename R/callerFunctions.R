@@ -93,6 +93,7 @@ callCalcExactIntegralC <- function(X, y, cvh, filter, eps) {
 #'   about whether AVX extensions where activated during compilation. Active AVX speeds up
 #'   computations significantly (by a factor of 4 to 8 roughly). More informations about how
 #'   AVX can be enabled during installation can be found in documentation.
+#' @export
 
 compilationInfo <- function() {
   invisible(.C ("printAVXInfo"))

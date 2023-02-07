@@ -17,6 +17,7 @@
 #'   entry constitutes the offset of a face}
 #'
 #' @example R/Examples/paramFitKernelDensity
+#' @export
 
 paramFitKernelDensity <- function(X, w, cvh, h = apply(X, 2, sd) * n ** (-1 / (d+4))) {
   n <- dim(X)[1]

@@ -24,6 +24,7 @@
 #'   Note the difference
 #'
 #' @example R/Examples/paramFitGammaOne
+#' @export
 
 
 paramFitGammaOne <- function(X, w, ACVH, bCVH, cvh) {

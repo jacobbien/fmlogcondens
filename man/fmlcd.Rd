@@ -4,8 +4,16 @@
 \alias{fmlcd}
 \title{Estimates a Log-Concave Density}
 \usage{
-fmlcd(X, w = rep(1/nrow(X), nrow(X)), init = "", verbose = 0,
-  intEps = 0.001, objEps = 1e-07, offset = 0.1, maxIter = 10000)
+fmlcd(
+  X,
+  w = rep(1/nrow(X), nrow(X)),
+  init = "",
+  verbose = 0,
+  intEps = 0.001,
+  objEps = 1e-07,
+  offset = 0.1,
+  maxIter = 10000
+)
 }
 \arguments{
 \item{X}{Matrix of data points (one sample per row)}
@@ -51,13 +59,16 @@ Parametrization of f(x) in terms of hyperplanes and function
 }
 \examples{
 # draw samples from normal distribution
-X <- matrix(rnorm(200),100,2) 
-# calculate parameters of convex hull of X
-r <- calcCvxHullFaces(X)
-# draw random parameters of 10 hyperplanes
-a <- matrix(runif(10*2),10,2)
-b <- runif(10)
+X <- matrix(rnorm(500),250,2)
+# estimate log-concave density
+r <- fmlcd(X)
 
-# calculate parameters of convex hull of X
-params <- correctIntegral(X,rep(0,2),a,b,r$cvh)
+# load `LogConcDEAD` library for plotting capatibilities
+library(LogConcDEAD)
+r <- LogConcDEAD::getinfolcd(X, r$logMLE) # create a `LogConcDEAD` object
+# plot estimated density
+par(mfrow = c(1, 2)) #square plots
+plot(r, addp = FALSE, asp = 1, main="density")
+plot(r, uselog = TRUE, addp = FALSE, asp = 1, main="log density")
+
 }

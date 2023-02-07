@@ -11,6 +11,7 @@
 #'   \item{ACVH}{A matrix where each row constitutes the normal vector of a
 #'   face} \item{bCVH}{A vector where each entry constitutes the offset of the
 #'   hyperplane for a face}
+#' @export
 
 calcCvxHullFaces <-function(X) {
 
