@@ -67,7 +67,7 @@ callCalcExactIntegralC <- function(X, y, cvh, filter, eps) {
   T <- T[!(apply(T, 1, max) > n), ]
 
   # if there is only one simplex
-  if (class(T) != "matrix") {
+  if (!is(T, "matrix")) {
     T <- t(as.matrix(T))
   }
 
